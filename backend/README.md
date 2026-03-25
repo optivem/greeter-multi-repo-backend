@@ -1,6 +1,6 @@
 # Backend Service
 
-This is the backend API service for the ATDD Accelerator Template, built with Java Spring Boot.
+This is the backend API service for the Greeter, built with Java Spring Boot.
 
 ## Features
 

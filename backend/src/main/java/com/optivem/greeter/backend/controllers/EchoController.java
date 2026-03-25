@@ -1,4 +1,4 @@
-package com.optivem.atddaccelerator.template.backend.controllers;
+package com.optivem.greeter.backend.controllers;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

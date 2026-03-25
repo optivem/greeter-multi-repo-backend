@@ -1,4 +1,4 @@
-package com.optivem.atddaccelerator.template.backend;
+package com.optivem.greeter.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

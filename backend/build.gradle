@@ -4,9 +4,9 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'com.optivem.atddaccelerator.template.backend'
+group = 'com.optivem.greeter.backend'
 version = '0.0.1-SNAPSHOT'
-description = 'ATDD Accelerator Template - Backend'
+description = 'Greeter - Backend'
 
 java {
 	toolchain {

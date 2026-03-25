@@ -1,4 +1,4 @@
-package com.optivem.atddaccelerator.template.backend.models;
+package com.optivem.greeter.backend.models;
 
 public class Todo {
     private int userId;

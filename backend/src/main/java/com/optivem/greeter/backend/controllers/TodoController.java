@@ -1,6 +1,6 @@
-package com.optivem.atddaccelerator.template.backend.controllers;
+package com.optivem.greeter.backend.controllers;
 
-import com.optivem.atddaccelerator.template.backend.models.Todo;
+import com.optivem.greeter.backend.models.Todo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;

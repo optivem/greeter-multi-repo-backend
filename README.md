@@ -1,10 +1,10 @@
-# ATDD Accelerator Template - Multi Repo - Backend
+# Greeter - Multi Repo - Backend
 
-[![commit-stage-backend](https://github.com/optivem/atdd-accelerator-template-multi-repo-backend/actions/workflows/commit-stage-backend.yml/badge.svg)](https://github.com/optivem/atdd-accelerator-template-multi-repo-backend/actions/workflows/commit-stage-backend.yml)
+[![commit-stage-backend](https://github.com/optivem/greeter-multi-repo-backend/actions/workflows/commit-stage-backend.yml/badge.svg)](https://github.com/optivem/greeter-multi-repo-backend/actions/workflows/commit-stage-backend.yml)
 
 ## Root Repository
 
-- [ATDD Accelerator Template - Multi Repository](https://github.com/optivem/atdd-accelerator-template-multi-repo)
+- [Greeter - Multi Repository](https://github.com/optivem/greeter-multi-repo)
 
 ## License
 
