@@ -17,7 +17,23 @@ concurrency:
   group: commit-stage-backend-${{ github.ref }}
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Validate Config
+        uses: optivem/actions/validate-config@v1
+        with:
+          names: |
+            DOCKERHUB_USERNAME
+            DOCKERHUB_TOKEN
+        env:
+          DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
   run:
+    needs: check
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -49,23 +65,29 @@ jobs:
         run: ./gradlew build
         working-directory: backend
 
+      # TODO: Implement
       - name: Run Unit Tests
-        run: echo "Run Unit Tests"
+        run: echo "TODO - not yet implemented"
 
+      # TODO: Implement
       - name: Run Narrow Integration Tests
-        run: echo "Run Narrow Integration Tests"
+        run: echo "TODO - not yet implemented"
 
+      # TODO: Implement
       - name: Run Component Tests
-        run: echo "Run Component Tests"
+        run: echo "TODO - not yet implemented"
 
+      # TODO: Implement
       - name: Run Contract Tests
-        run: echo "Run Contract Tests"
+        run: echo "TODO - not yet implemented"
 
       - name: Run Linter
-        run: echo "Run Linter"
+        run: ./gradlew checkstyleMain
+        working-directory: backend
 
+      # TODO: Implement
       - name: Run Code Analysis
-        run: echo "Run Code Analysis"
+        run: echo "TODO - not yet implemented"
 
       - name: Build Artifact
         if: github.ref == 'refs/heads/main'
@@ -93,7 +115,7 @@ jobs:
           REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
   summary:
-    needs: [run]
+    needs: [check, run]
     if: always()
     runs-on: ubuntu-latest
     steps:
