@@ -5,6 +5,7 @@ COPY gradle gradle
 COPY build.gradle .
 COPY settings.gradle .
 COPY src src
+COPY config config
 RUN ./gradlew build -x test
 
 FROM eclipse-temurin:21-jre-alpine
