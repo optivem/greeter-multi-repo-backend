@@ -39,8 +39,7 @@ jobs:
       contents: read
       packages: write
     outputs:
-      component-version: ${{ steps.read-version.outputs.target-version }}
-      image-version-tag: ${{ steps.build.outputs.image-version-tag }}
+      image-digest-url: ${{ steps.push.outputs.image-digest-url }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
@@ -50,10 +49,6 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Read Component Version
-        id: read-version
-        uses: optivem/actions/read-target-version@v1
 
       - name: Setup Runtime
         uses: optivem/actions/setup-java-gradle@v1
@@ -92,6 +87,11 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      - name: Read Target Version
+        if: github.ref == 'refs/heads/main'
+        id: read-version
+        uses: optivem/actions/read-target-version@v1
+
       - name: Build Artifact
         if: github.ref == 'refs/heads/main'
         id: build
@@ -126,4 +126,4 @@ jobs:
       uses: optivem/actions/summarize-commit-stage@v1
       with:
         stage-result: ${{ needs.run.result }}
-        success-artifact-url: ${{ needs.run.outputs.image-version-tag }}
+        success-artifact-url: ${{ needs.run.outputs.image-digest-url }}
