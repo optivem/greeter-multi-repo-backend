@@ -26,7 +26,6 @@ replay_pid*
 # Gradle files
 .gradle/
 build/
-!gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
@@ -123,3 +122,6 @@ jacoco.xml
 *.db
 *.sqlite
 *.sqlite3
+
+# Gradle wrapper (must come after *.jar)
+!gradle/wrapper/gradle-wrapper.jar
